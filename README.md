@@ -18,6 +18,8 @@ OLLAMA_MODEL=llama3.1
 OLLAMA_URL=http://localhost:11434/api/generate
 DATABASE_URL=sqlite:///aisci.db
 
+python --version
+
 python app.py
 # 또는 run.bat 실행 (Windows)
 # 접속: http://127.0.0.1:5000
