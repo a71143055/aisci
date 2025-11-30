@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>시뮬레이션 기반 프로젝트 생성</h2>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.idea.label }}<br>
+            {{ form.idea(rows=4, cols=80) }}
+        </div>
+        <div>
+            {{ form.goals.label }}<br>
+            {{ form.goals(rows=4, cols=80) }}
+        </div>
+        <div>
+            {{ form.constraints.label }}<br>
+            {{ form.constraints(rows=3, cols=80) }}
+        </div>
+        <div>
+            {{ form.tech_stack.label }}<br>
+            {{ form.tech_stack(size=60) }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+
+    {% if result %}
+        <hr>
+        <h3>생성 결과</h3>
+        <p><strong>프로젝트 디렉터리:</strong> {{ result.project_dir }}</p>
+        <p><strong>ZIP 경로:</strong> {{ result.zip_path }}</p>
+        <p><strong>요약:</strong></p>
+        <pre>{{ result.summary.llm_design_summary }}</pre>
+        <a class="btn" href="{{ url_for('download', path=result.zip_path) }}">ZIP 다운로드</a>
+    {% endif %}
+{% endblock %}

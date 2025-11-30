@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>aisci</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+{% include 'partials/navbar.html' %}
+<main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash">
+                {% for category, message in messages %}
+                    <div class="flash-item {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>

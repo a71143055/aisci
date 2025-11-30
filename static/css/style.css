@@ -1,0 +1,13 @@
+body { font-family: sans-serif; margin: 0; }
+.container { padding: 20px; }
+.navbar { background: #222; color: #fff; padding: 10px 20px; display: flex; gap: 12px; align-items: center; }
+.navbar a { color: #fff; text-decoration: none; }
+.navbar .user { margin-left: auto; opacity: 0.8; }
+.flash-item { padding: 8px; margin: 6px 0; border-radius: 4px; }
+.flash-item.success { background: #e6ffed; }
+.flash-item.info { background: #e6f7ff; }
+.flash-item.warning { background: #fff9e6; }
+.flash-item.danger { background: #ffe6e6; }
+.chat .user, .chat .assistant { margin: 8px 0; }
+pre { background: #f6f8fa; padding: 10px; border-radius: 6px; overflow-x: auto; }
+.btn { display: inline-block; background: #0366d6; color: white; padding: 8px 12px; border-radius: 4px; text-decoration: none; }
